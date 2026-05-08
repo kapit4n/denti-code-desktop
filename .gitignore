@@ -1,0 +1,36 @@
+# Gradle
+.gradle/
+build/
+
+# Java
+*.class
+hs_err_pid*
+replay_pid*
+
+# IntelliJ / JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+.gradle/
+build/
+out/
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+data/
+*.db
+*.sqlite
+logs/
+*.log
