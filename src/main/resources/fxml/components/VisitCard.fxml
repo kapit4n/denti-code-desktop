@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER_LEFT" spacing="14" styleClass="visit-card">
+    <padding>
+        <Insets bottom="12" left="16" right="16" top="12"/>
+    </padding>
+    <Label fx:id="avatar" styleClass="visit-avatar" minWidth="40" prefWidth="40" minHeight="40" prefHeight="40" alignment="CENTER"/>
+    <VBox spacing="4" HBox.hgrow="ALWAYS">
+        <Label fx:id="patientName" styleClass="visit-patient-name" wrapText="true"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="visitType" styleClass="visit-type"/>
+            <Label fx:id="visitTime" styleClass="visit-time"/>
+        </HBox>
+    </VBox>
+    <Label fx:id="statusBadge" styleClass="visit-status-badge visit-badge-neutral" minWidth="80" alignment="CENTER"/>
+    <Region HBox.hgrow="NEVER"/>
+    <Button fx:id="menuBtn" styleClass="visit-menu-btn"/>
+</HBox>

@@ -35,6 +35,11 @@ dependencies {
 
     // UI helpers — modern theming for JavaFX
     implementation("io.github.mkpaz:atlantafx-base:2.0.1")
+    implementation("org.kordamp.ikonli:ikonli-javafx:12.4.0")
+    implementation("org.kordamp.ikonli:ikonli-fontawesome6-pack:12.4.0")
+    // MaterialFX: use for advanced controls (MFXTextField, cards); navbar uses styled TextField for simplicity.
+    implementation("io.github.palexdev:materialfx:11.17.0")
+    implementation("org.controlsfx:controlsfx:11.2.1")
 
     // JSON for FacilitiesUsed payloads
     implementation("com.fasterxml.jackson.core:jackson-databind:2.17.2")

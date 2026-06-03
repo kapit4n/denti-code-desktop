@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" styleClass="dashboard-scroll" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox fx:id="dashboardRoot" spacing="24" styleClass="dashboard-page">
+        <padding>
+            <Insets bottom="32" left="28" right="28" top="24"/>
+        </padding>
+        <VBox spacing="6" styleClass="dashboard-welcome">
+            <Label fx:id="welcomeTitle" styleClass="dashboard-welcome-title" wrapText="true"/>
+            <Label fx:id="welcomeSubtitle" styleClass="dashboard-welcome-sub" wrapText="true"/>
+        </VBox>
+        <GridPane fx:id="statGrid" hgap="16" vgap="16" styleClass="stat-grid">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="160" prefWidth="220"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="160" prefWidth="220"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="160" prefWidth="220"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="160" prefWidth="220"/>
+            </columnConstraints>
+            <VBox styleClass="stat-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <Label fx:id="statApptTitle" styleClass="stat-card-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="statApptGrowth" styleClass="stat-growth stat-growth-positive"/>
+                </HBox>
+                <Label fx:id="statApptValue" styleClass="stat-card-value"/>
+                <Label fx:id="statApptBadge" styleClass="stat-badge"/>
+            </VBox>
+            <VBox styleClass="stat-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <Label fx:id="statDoneTitle" styleClass="stat-card-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="statDoneGrowth" styleClass="stat-growth stat-growth-positive"/>
+                </HBox>
+                <Label fx:id="statDoneValue" styleClass="stat-card-value"/>
+                <Label fx:id="statDoneBadge" styleClass="stat-badge"/>
+            </VBox>
+            <VBox styleClass="stat-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <Label fx:id="statPatTitle" styleClass="stat-card-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="statPatGrowth" styleClass="stat-growth stat-growth-positive"/>
+                </HBox>
+                <Label fx:id="statPatValue" styleClass="stat-card-value"/>
+                <Label fx:id="statPatBadge" styleClass="stat-badge"/>
+            </VBox>
+            <VBox styleClass="stat-card" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                <HBox alignment="CENTER_LEFT" spacing="8">
+                    <Label fx:id="statRevTitle" styleClass="stat-card-title"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="statRevGrowth" styleClass="stat-growth stat-growth-positive"/>
+                </HBox>
+                <Label fx:id="statRevValue" styleClass="stat-card-value"/>
+                <Label fx:id="statRevBadge" styleClass="stat-badge"/>
+            </VBox>
+        </GridPane>
+        <HBox fx:id="mainRow" spacing="24" styleClass="dashboard-main-row">
+            <VBox fx:id="leftColumn" spacing="16" HBox.hgrow="ALWAYS" minWidth="320">
+                <Label fx:id="todayVisitsTitle" styleClass="section-heading"/>
+                <VBox fx:id="todayVisitsList" spacing="10" styleClass="visit-list"/>
+            </VBox>
+            <VBox fx:id="rightColumn" spacing="16" minWidth="300" prefWidth="320" maxWidth="380" styleClass="dashboard-side-column">
+                <VBox spacing="10" styleClass="side-widget">
+                    <Label fx:id="upcomingTitle" styleClass="section-heading"/>
+                    <VBox fx:id="upcomingList" spacing="8" styleClass="side-widget-body"/>
+                </VBox>
+                <VBox spacing="10" styleClass="side-widget">
+                    <Label fx:id="quickTitle" styleClass="section-heading"/>
+                    <VBox fx:id="quickActions" spacing="8" styleClass="side-widget-body"/>
+                </VBox>
+                <VBox spacing="10" styleClass="side-widget" VBox.vgrow="ALWAYS">
+                    <Label fx:id="chartTitle" styleClass="section-heading"/>
+                    <BarChart fx:id="weekChart" legendVisible="false" animated="false" styleClass="dashboard-mini-chart" VBox.vgrow="ALWAYS">
+                        <xAxis>
+                            <CategoryAxis side="BOTTOM"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis side="LEFT" minorTickCount="0" autoRanging="true"/>
+                        </yAxis>
+                    </BarChart>
+                </VBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

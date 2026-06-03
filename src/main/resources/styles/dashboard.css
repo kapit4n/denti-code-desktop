@@ -1,0 +1,136 @@
+/* Doctor dashboard layout + navbar */
+
+.dashboard-scroll {
+    -fx-background: #f5f7fa;
+    -fx-background-color: #f5f7fa;
+}
+
+.dashboard-scroll > .viewport {
+    -fx-background-color: #f5f7fa;
+}
+
+.dashboard-page {
+    -fx-background-color: #f5f7fa;
+}
+
+.dashboard-welcome-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #111827;
+}
+
+.dashboard-welcome-sub {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+.dashboard-main-row {
+    -fx-alignment: TOP_LEFT;
+}
+
+.dashboard-side-column {
+    -fx-spacing: 16;
+}
+
+.side-widget {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14;
+    -fx-padding: 16 18 16 18;
+    -fx-spacing: 8;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.06), 14, 0.2, 0, 3);
+}
+
+.side-widget-body {
+    -fx-spacing: 6;
+}
+
+.section-heading {
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #111827;
+}
+
+.upcoming-line {
+    -fx-font-size: 13px;
+    -fx-text-fill: #374151;
+}
+
+.quick-action-btn {
+    -fx-alignment: CENTER_LEFT;
+    -fx-graphic-text-gap: 10;
+    -fx-padding: 10 12 10 12;
+    -fx-background-radius: 10;
+    -fx-background-color: #f9fafb;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 10;
+    -fx-text-fill: #111827;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.quick-action-btn:hover {
+    -fx-background-color: #eff6ff;
+    -fx-border-color: #bfdbfe;
+}
+
+.dashboard-mini-chart {
+    -fx-padding: 8 0 0 0;
+    -fx-background-color: transparent;
+}
+
+.visit-list {
+    -fx-spacing: 10;
+}
+
+.app-header {
+    -fx-padding: 0 28 0 28;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 0 0 1 0;
+    -fx-effect: dropshadow(gaussian, rgba(15, 23, 42, 0.04), 12, 0.2, 0, 2);
+}
+
+.navbar-search {
+    -fx-min-height: 40;
+}
+
+.navbar-search-hint {
+    -fx-font-size: 11px;
+    -fx-text-fill: #9ca3af;
+}
+
+.navbar-right {
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.icon-button {
+    -fx-background-color: #f3f4f6;
+    -fx-background-radius: 10;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.icon-button:hover {
+    -fx-background-color: #e5e7eb;
+}
+
+.profile-menu {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 10;
+    -fx-padding: 6 12 6 12;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 10;
+    -fx-cursor: hand;
+}
+
+.profile-menu-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #111827;
+}
+
+.navbar-lang {
+    -fx-alignment: CENTER_LEFT;
+}

@@ -7,6 +7,7 @@ import com.denticode.desktop.ui.shell.NavItem;
 import com.denticode.desktop.ui.shell.PortalShell;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import org.kordamp.ikonli.fontawesome6.FontAwesomeSolid;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,26 +20,32 @@ public final class PatientPortal {
         Optional<Patient> me = currentPatient(app);
 
         List<NavItem> items = List.of(
-                new NavItem("home",   app.i18n().binding("nav.home"),
+                new NavItem("home", app.i18n().binding("nav.home"),
                         () -> me.map(p -> (Node) new PatientDashboardView(app, p).getRoot())
-                                .orElseGet(() -> new Label(app.i18n().t("common.empty")))),
+                                .orElseGet(() -> new Label(app.i18n().t("common.empty"))),
+                        FontAwesomeSolid.HOME),
                 new NavItem("visits", app.i18n().binding("nav.visits"),
                         () -> me.map(p -> (Node) new PatientAppointmentsView(app, p).getRoot())
-                                .orElseGet(() -> new Label(app.i18n().t("common.empty")))),
-                new NavItem("you",    app.i18n().binding("nav.yourDetails"),
-                        () -> new ProfileView(app).getRoot())
+                                .orElseGet(() -> new Label(app.i18n().t("common.empty"))),
+                        FontAwesomeSolid.CALENDAR_DAY),
+                new NavItem("you", app.i18n().binding("nav.yourDetails"),
+                        () -> new ProfileView(app).getRoot(),
+                        FontAwesomeSolid.USER_CIRCLE)
         );
 
         this.shell = new PortalShell(app, app.i18n().binding("portal.patient"), items);
-        shell.replaceContent(me.map(p -> (Node) new PatientDashboardView(app, p).getRoot())
-                .orElseGet(() -> new Label(app.i18n().t("common.empty"))));
+        this.shell.showDefaultView();
     }
 
-    public Node getRoot() { return shell.getRoot(); }
+    public Node getRoot() {
+        return shell.getRoot();
+    }
 
     private static Optional<Patient> currentPatient(AppContext app) {
         var u = app.session().getUser();
-        if (u == null) return Optional.empty();
+        if (u == null) {
+            return Optional.empty();
+        }
         return app.patientService().findByUserId(u.getId());
     }
 }
